@@ -1,10 +1,29 @@
-<mvc:View controllerName="sapui5.employees.controller.v1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View 
+controllerName="sapui5.employees.controller.v1" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true"
+xmlns="sap.m"
+xmlns:core="sap.ui.core"
+>
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-                    
+                    <HBox >
+                    <Label id="label1" labelFor="input1" text="{i18n>label1}" class="sapUiSmallMargin"/> 
+                    <Input id="input1" maxLength="6" width="200px" class="sapUiSmallMarginEnd" 
+                    liveChange="onChange"/>
+                <Label id="label2" labelFor="select2" text="{i18n>label2}" class="sapUiSmallMargin" 
+                visible="false"/> 
+                <Select id="select2" forceSelection="false" visible="false">
+                    <items>
+                    <core:Item key="US" text="{i18n>countryUS}"/>
+                    <core:Item key="UK" text="{i18n>countryUK}"/>
+                    <core:Item key="ES" text="{i18n>countryES}"/>
+                    </items>
+                </Select>
+                    </HBox>
                     </content>
 				</Page>
 			</pages>
